@@ -7,25 +7,30 @@
 <title>DOCOBLE FANTASY(仮)会員登録ページ</title>
 </head>
 <body>
-
-	<form action="" method="">
-		<table>
+<div align="center">
+<h1>DOCOBLUEFANTASY</h1>
+<hr>
+	<form action="/docobluefantasy/RegisterServlet" method="POST">
+		<table border="1">
 			<tr>
 				<th>名前</th>
-				<td><input type="text" name="name"></td>
+				<td><input type="text" name="name" required></td>
 			</tr>
 			<tr>
 				<th>パスワード</th>
-				<td><input type="password" name="pass"></td>
+				<td><input type="password" name="pass" required></td>
 			</tr>
 			<tr>
 				<th>パスワード確認</th>
-				<td><input type="password" name="pass"></td>
+				<td><input type="password" name="pass" required></td>
 			<tr>
 				<td><input type="submit" value="ログイン"></td>
 			</tr>
 		</table>
 	</form>
+	<hr>
 
+	<p>Copyright ドコウィズ攻略班 All Rights Reseved.</p>
+</div>
 </body>
 </html>
