@@ -9,7 +9,7 @@ public class Character {
 	private String skill;
 	private int evalution;
 
-	Character(String name,String rarity,int attack,int hp,String skill,int evalution){
+	public Character(String name,String rarity,int attack,int hp,String skill,int evalution){
 
 		this.name = name;
 		this.rarity = rarity;

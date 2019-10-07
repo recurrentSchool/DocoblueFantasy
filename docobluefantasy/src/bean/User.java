@@ -6,12 +6,12 @@ public class User {
 	private String pass;
 	private int billing;
 
-	User(String name,String pass){
+	public User(String name,String pass){
 		this.name = name;
 		this.pass = pass;
 	}
 
-	User(int admin,String name, String pass,int billing){
+	public User(int admin,String name, String pass,int billing){
 		this.admin = admin;
 		this.name = name;
 		this.pass = pass;

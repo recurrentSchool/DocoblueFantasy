@@ -5,7 +5,7 @@ public class Weapon {
 	private int attack;
 	private String skill;
 
-	Weapon(String name,int attack,String skill){
+	public Weapon(String name,int attack,String skill){
 
 		this.name = name;
 		this.attack = attack;

@@ -6,7 +6,7 @@ public class Boss {
 	private int hp;
 	private String specialAttack;
 
-	Boss(String name,int attack,int hp,String specialAttack){
+	public Boss(String name,int attack,int hp,String specialAttack){
 
 		this.name = name;
 		this.attack = attack;
