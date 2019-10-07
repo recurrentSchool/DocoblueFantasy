@@ -7,16 +7,16 @@ public class Character {
 	private int attack;
 	private int hp;
 	private String skill;
-	private int evalution;
+	private int evaluation;
 
-	public Character(String name,String rarity,int attack,int hp,String skill,int evalution){
+	public Character(String name,String rarity,int attack,int hp,String skill,int evaluation){
 
 		this.name = name;
 		this.rarity = rarity;
 		this.attack = attack;
 		this.hp = hp;
 		this.skill = skill;
-		this.evalution = evalution;
+		this.evaluation = evaluation;
 
 	}
 
@@ -40,8 +40,8 @@ public class Character {
 		return skill;
 	}
 
-	public int getEvalution() {
-		return evalution;
+	public int getEvaluation() {
+		return evaluation;
 	}
 
 }
