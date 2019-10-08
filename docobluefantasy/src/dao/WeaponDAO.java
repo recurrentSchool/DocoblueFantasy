@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import bean.Weapon;
 
@@ -150,6 +152,71 @@ public class WeaponDAO {
 		}
 
 		return weaponResult;
+
+	}
+
+	//武器情報のランダム取得
+	public List<Weapon> selectRandomDB() {
+
+		//ランダムに取得したSelectの結果を武器情報に格納するための変数
+		List<Weapon> listWeapon = new ArrayList<Weapon>();
+
+		try {
+
+			conn = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASS);
+
+			String sql = "SELECT * FROM WEAPON ORDER BY rand() LIMIT 10;";
+			pStmt = conn.prepareStatement(sql);
+
+			rs = pStmt.executeQuery();
+
+			while (rs.next()) {
+
+				String name = rs.getString("NAME");
+				int attack = rs.getInt("ATTACK");
+				String skill = rs.getString("SKILL");
+
+				Weapon weaponResult = new Weapon(name, attack, skill);
+				listWeapon.add(weaponResult);
+
+			}
+
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+
+			//closeする
+		} finally {
+			if (rs != null) {
+				try {
+
+					rs.close();
+
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			if (pStmt != null) {
+				try {
+
+					pStmt.close();
+
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			if (conn != null) {
+				try {
+
+					conn.close();
+
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+
+		return listWeapon;
 
 	}
 
