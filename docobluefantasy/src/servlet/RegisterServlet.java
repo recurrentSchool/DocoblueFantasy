@@ -20,6 +20,24 @@ public class RegisterServlet extends HttpServlet {
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+
+		HttpSession session = request.getSession();
+		User user = (User) session.getAttribute("user");
+
+		RegisterLogic bo = new RegisterLogic();
+
+		boolean result = bo.executeRegist(user);
+
+		if (result == true) {
+			String message = "";
+			message = "登録完了です";
+
+			session.setAttribute("message",message );
+
+			RequestDispatcher dis = request.getRequestDispatcher("/message.jsp");
+			dis.forward(request, response);
+		}
 
 	}
 
@@ -28,9 +46,15 @@ public class RegisterServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 
 		int admin =Integer.parseInt(request.getParameter("admin"));
-		String name = request.getParameter("");
-		String pass = request.getParameter("");
+		String name = request.getParameter("name");
+		String pass = request.getParameter("pass");
 		int billing =Integer.parseInt(request.getParameter("billing"));
+		String message = " ";
+
+		System.out.println(admin);
+		System.out.println(name);
+		System.out.println(pass);
+		System.out.println(billing);
 
 		User user = new User(admin,name, pass,billing);
 
@@ -39,15 +63,21 @@ public class RegisterServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		session.setAttribute("user",user );
 
-		boolean result = bo.executeRegister(user);
+		boolean result = bo.executeMatchName(user);
 
 		if (result == true) {
+
+			session.setAttribute("message",message );
 			RequestDispatcher dis = request.getRequestDispatcher("/confimation.jsp");
 			dis.forward(request, response);
 		}
 
 		else {
-			response.sendRedirect("/register.jsp");
+
+			message = "この名前は既に使われています";
+			session.setAttribute("message",message );
+			RequestDispatcher dis = request.getRequestDispatcher("/register.jsp");
+			dis.forward(request, response);
 		}
 
 	}
