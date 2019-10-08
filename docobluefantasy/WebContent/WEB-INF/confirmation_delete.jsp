@@ -8,5 +8,9 @@
 </head>
 <body>
 
+
+
+
+<input type="button" onclick="location.href='/docobluefantasy/WebContent/test/admin.jsp'"value="戻る">
 </body>
 </html>

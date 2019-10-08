@@ -19,9 +19,14 @@
 <hr>
 <form action="/docobluefantasy/AdminFunctionServlet" method="post">
 
-削除する項目名を入力してください
+削除する種類と項目名を入力してください<br>
+<select name="contentsSelect">
+	<option value="weapon">武器</option>
+	<option value="character">キャラクター</option>
+	<option value="boss">ボス</option>
+</select>
 <br>
-<input type="text" name="delete_name">
+名前:<input type="text" name="delete_name">
 <br>
 <input type="submit"  name="delete" value="確定">
 <br>

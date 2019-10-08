@@ -15,14 +15,17 @@
 <hr>
 
 <form action="/docobluefantasy/AdminFunctionServlet" method="post">
+<input type="hidden" name="functionPage" value="entry">
+<input type="hidden" name="pageMove" value="confirmation">
+
 <p>
 武器
 <br>
-　　名前　：<input type="text" name="weapon_name">
+　　名前　：<input type="text" name="weaponName">
 <br>
-　攻撃力　：<input type="text" name="weapon_attack">
+　攻撃力　：<input type="text" name="weaponAttack">
 <br>
-　スキル　：<input type="text" name="weapon_skill">
+　スキル　：<input type="text" name="weaponSkill">
 <br>
 <input type="submit" name="entry" value="確定">
 </p>
