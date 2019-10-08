@@ -1,12 +1,12 @@
 package model;
 
-import bean.Character;
+import bean.BattleCharacter;
 import dao.CharacterDAO;
 
 public class AdminCharacterDateLogic {
 
 	//キャラクター情報の追加
-	public boolean executeInsert(Character character) {
+	public boolean executeInsert(BattleCharacter character) {
 
 		CharacterDAO characterDAO = new CharacterDAO();
 		boolean propriety = characterDAO.insertDB(character);
@@ -17,7 +17,7 @@ public class AdminCharacterDateLogic {
 	}
 
 	//キャラクター情報の削除
-	public boolean executeDelete(Character character) {
+	public boolean executeDelete(BattleCharacter character) {
 
 		CharacterDAO characterDAO = new CharacterDAO();
 		boolean propriety = characterDAO.deleteDB(character);
@@ -28,7 +28,7 @@ public class AdminCharacterDateLogic {
 	}
 
 	//キャラクター情報の上書き
-	public boolean executeUpdate(Character characterOriginal,Character characterUpdate) {
+	public boolean executeUpdate(BattleCharacter characterOriginal,BattleCharacter characterUpdate) {
 
 		CharacterDAO characterDAO = new CharacterDAO();
 		boolean propriety = characterDAO.updateDB(characterOriginal,characterUpdate);

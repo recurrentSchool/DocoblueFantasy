@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import bean.Character;
+import bean.BattleCharacter;
 
 //動作未確認
 public class CharacterDAO {
@@ -21,7 +21,7 @@ public class CharacterDAO {
 	private ResultSet rs = null;
 
 	//キャラクター情報の登録
-	public boolean insertDB(Character character) {
+	public boolean insertDB(BattleCharacter character) {
 
 		boolean insertBool = false;
 
@@ -92,10 +92,10 @@ public class CharacterDAO {
 	}
 
 	//キャラクター情報の取得
-	public Character selectDB(Character character) {
+	public BattleCharacter selectDB(BattleCharacter character) {
 
 		//Selectの結果をキャラクター情報に格納するための変数
-		Character characterResult = null;
+		BattleCharacter characterResult = null;
 
 		try {
 
@@ -116,7 +116,7 @@ public class CharacterDAO {
 				String skill = rs.getString("SKILL");
 				int evalution = rs.getInt("EVALUATION");
 
-				characterResult = new Character(name,rarity,attack,hp,skill,evalution);
+				characterResult = new BattleCharacter(name,rarity,attack,hp,skill,evalution);
 
 			}
 
@@ -160,7 +160,7 @@ public class CharacterDAO {
 	}
 
 	//キャラクター情報の削除
-	public boolean deleteDB(Character character) {
+	public boolean deleteDB(BattleCharacter character) {
 
 		boolean deleteBool = false;
 
@@ -226,7 +226,7 @@ public class CharacterDAO {
 	}
 
 	//キャラクター情報の上書き
-	public boolean updateDB(Character characterOriginal,Character characterUpdate) {
+	public boolean updateDB(BattleCharacter characterOriginal,BattleCharacter characterUpdate) {
 
 		boolean updateBool = false;
 

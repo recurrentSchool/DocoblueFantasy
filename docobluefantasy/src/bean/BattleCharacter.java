@@ -1,6 +1,6 @@
 package bean;
 
-public class Character {
+public class BattleCharacter {
 
 	private String name;
 	private String rarity;
@@ -9,7 +9,7 @@ public class Character {
 	private String skill;
 	private int evaluation;
 
-	public Character(String name,String rarity,int attack,int hp,String skill,int evaluation){
+	public BattleCharacter(String name,String rarity,int attack,int hp,String skill,int evaluation){
 
 		this.name = name;
 		this.rarity = rarity;
