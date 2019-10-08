@@ -17,7 +17,11 @@
 
 	<hr>
 
-	<p>Copyright ドコウィズ攻略班 All Rights Reseved.</p>
+<table>
+<tr>
+	<th><font color="#9999FF">Copyright ドコウィズ攻略班 All Rights Reseved.</font></th>
+</tr>
+</table>
 </div>
 </body>
 </html>

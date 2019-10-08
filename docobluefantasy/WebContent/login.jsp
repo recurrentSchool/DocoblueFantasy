@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ page%>
+    <% String message =(String)request.getAttribute("message"); %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,6 +12,8 @@
 <div align="center">
 <h1>DOCOBLUEFANTASY攻略</h1>
 <hr>
+
+
 	<form action="/docobluefantasy/LoginServlet" method="POST">
 		<table>
 			<tr>
@@ -27,7 +31,11 @@
 	</form>
 <hr>
 
-	<p>Copyright ドコウィズ攻略班 All Rights Reseved.</p>
+<table>
+<tr>
+	<th><font color="#9999FF">Copyright ドコウィズ攻略班 All Rights Reseved.</font></th>
+</tr>
+</table>
 </div>
 </body>
 </html>

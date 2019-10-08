@@ -11,10 +11,15 @@
 <h1>DOCOBLUEFANTASY</h1>
 <hr>
 	<form action="/docobluefantasy/RegisterServlet" method="POST">
+	<input type="hidden" name="admin" value="1">
 		<table border="1">
 			<tr>
 				<th>名前</th>
 				<td><input type="text" name="name" required></td>
+			</tr>
+			<tr>
+				<th>課金額</th>
+				<td><input type="text" name="billing" required></td>
 			</tr>
 			<tr>
 				<th>パスワード</th>
