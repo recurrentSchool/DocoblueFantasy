@@ -13,7 +13,7 @@
 	<table border="1" align="center">
 			<tr>
 				<th>名前</th>
-				<td>ナルメア</td>
+				<td></td>
 			</tr>
 			<tr>
 				<th>レアリティ</th>

@@ -8,10 +8,19 @@
 </head>
 <body>
 
-<a href="/docobluefantasy/weapon.jsp">武器一覧</a>
-<a href="/docobluefantasy/character.jsp">キャラクター一覧</a>
-<a href="/docobluefantasy/boss.jsp">ボス一覧</a>
-<a href="/docobluefantasy/gacha.jsp">ガチャ画面</a>
+<header>
+<center>
+<input type="image" src="${pageContext.request.contextPath}/image/siteLogo/POPUTE.png" width="600" height="150">
+</center>
+</header>
+<center>
+<table border="1">
+<tr><td width="200" height="50"><a href="/docobluefantasy/weapon.jsp"><center>武器一覧</center></a></td></tr>
+<tr><td width="200" height="50"><a href="/docobluefantasy/character.jsp"><center>キャラクター一覧</center></a></td></tr>
+<tr><td width="200" height="50"><a href="/docobluefantasy/boss.jsp"><center>ボス一覧</center></a></td></tr>
+<tr><td width="200" height="50"><a href="/docobluefantasy/gacha.jsp"><center>ガチャ</center></a></td></tr>
+</table>
+</center>
 
 </body>
 </html>

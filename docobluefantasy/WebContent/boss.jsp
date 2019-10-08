@@ -7,6 +7,25 @@
 <title>DOCOBLE FANTASY(仮)ボスページ</title>
 </head>
 <body>
+<center><h2>ボス一覧</h2></center>
+	<form action="" method="">
+		<center>
+		<table border="1">
+				<tr>
+					<td width="230" height="230"><center><p>ジ・オーダー・グランデ</p> <hr><a><input type="image" src="${pageContext.request.contextPath}/image/boss/GrandOrder.png" width="180" height="150"></a></center></td>
+					<td width="230" height="230"><center><p>グラニ</p> <hr><a><input type="image" src="${pageContext.request.contextPath}/image/boss/Gurani.png" width="180" height="150"></a></center></td>
+					<td width="230" height="230"><center><p>メドゥーサ</p> <hr><a><input type="image" src="${pageContext.request.contextPath}/image/boss/Medusa.png" width="180" height="150"></a></center></td>
+</tr>
+<tr>
+					<td width="230" height="230"><center><p>バイヴカハ</p> <hr><a><input type="image" src="${pageContext.request.contextPath}/image/boss/Morrigna.png" width="180" height="150"></a></center></td>
+					<td width="230" height="230"><center><p>ローズクイーン</p> <hr><a><input type="image" src="${pageContext.request.contextPath}/image/boss/RoseQueen.png" width="180" height="150"></a></center></td>
+					<td width="230" height="230"><center><p>シヴァ</p> <hr><a><input type="image" src="${pageContext.request.contextPath}/image/boss/Shiva.png" width="180" height="150"></a></center></td>
+</tr>
+					<td width="230" height="230"><center><p>ティアマトマグナ</p> <hr><a><input type="image" src="${pageContext.request.contextPath}/image/boss/TiamatOmega.png" width="180" height="150"></a></center></td>
+					<td width="230" height="230"><center><p>アルティメットバハムート</p> <hr><a><input type="image" src="${pageContext.request.contextPath}/image/boss/UltimateBahamut.png" width="180" height="150"></a></center></td>
+		</table>
+		</center>
+	</form>
 
 </body>
 </html>
