@@ -14,17 +14,17 @@
 <h1>DOCOBLUEFANTASY攻略</h1>
 <hr>
 
-	<form action="/docobluefantasy/AdminFunctionServlet" method="post">
+<form action="/docobluefantasy/AdminFunctionServlet" method="post">
 <p>
 武器
 <br>
-　　名前　：<input type="text" name="wapon_name">
+　　名前　：<input type="text" name="weapon_name">
 <br>
-　攻撃力　：<input type="text" name="wapon_attack">
+　攻撃力　：<input type="text" name="weapon_attack">
 <br>
-　スキル　：<input type="text" name="wapon_skill">
+　スキル　：<input type="text" name="weapon_skill">
 <br>
-<input type="submit" value="確定">
+<input type="submit" name="entry" value="確定">
 </p>
 
 <p>
@@ -59,7 +59,7 @@
     <option value="100">100</option>
     </select>
 <br>
-<input type="submit" value="確定">
+<input type="submit" name="entry" value="確定">
 </p>
 
 <p>
@@ -73,8 +73,13 @@
 <br>
 　必殺技　：<input type="text" name="boss_specialattack">
 <br>
-<input type="submit" value="確定">
+<input type="submit" name="entry" value="確定">
 </p>
+<br>
+<br>
+<br>
+<input type="button" onclick="location.href='/docobluefantasy/WebContent/WEB-INF/admin.jsp'"value="戻る">
+
 
 </form>
 

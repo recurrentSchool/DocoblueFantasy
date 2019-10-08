@@ -11,9 +11,12 @@
 <h1>DOCOBLUEFANTASY攻略</h1>
 <hr>
 
-<a href="/docobluefantasy/WEB-INF/entry.jsp">情報登録</a>
-<a href="/docobluefantasy/WEB-INF/delete.jsp">情報削除</a>
-<a href="/docobluefantasy/WEB-INF/update.jsp">情報更新</a>
+<input type="button" onclick="location.href='/docobluefantasy/WEB-INF/entry.jsp'"value="情報登録">
+<br>
+<input type="button" onclick="location.href='/docobluefantasy/WEB-INF/delete.jsp'"value="情報削除">
+<br>
+<input type="button" onclick="location.href='/docobluefantasy/WEB-INF/update.jsp'"value="情報更新">
+
 
 <a href="/docobluefantasy/login.jsp">戻る</a>
 
