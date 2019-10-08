@@ -5,14 +5,15 @@ import dao.UserDAO;
 
 public class RegisterLogic {
 
-	public boolean executeRegister(User user) {
+	//会員登録
+	public boolean executeRegist(User user) {
 
 		boolean propriety = false;
 
 		UserDAO userDAO = new UserDAO();
 
 		//ネームとパスが一致した時trueを返す
-		if(userDAO.matchNameDB(user)) {
+		if (userDAO.insertDB(user)) {
 			propriety = true;
 		} else {
 			propriety = false;
@@ -20,6 +21,23 @@ public class RegisterLogic {
 
 		return propriety;
 
+	}
+
+	//ネーム重複確認
+	public boolean executeMatchName(User user) {
+
+		boolean propriety = false;
+
+		UserDAO userDAO = new UserDAO();
+
+		//ネームとパスが一致した時trueを返す
+		if (userDAO.matchNameDB(user)) {
+			propriety = true;
+		} else {
+			propriety = false;
+		}
+
+		return propriety;
 	}
 
 }
