@@ -39,7 +39,7 @@ public class LoginServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		session.setAttribute("user",user );
 
-		if (result==true) {
+		if (result == true) {
 			//loginResult.jspへフォワード
 			RequestDispatcher dis = request.getRequestDispatcher("/main.jsp");
 			dis.forward(request, response);
