@@ -10,7 +10,7 @@
 
 <header>
 <center>
-<input type="image" src="${pageContext.request.contextPath}/image/siteLogo/POPUTE.png" width="600" height="150" alt="ヘッダー画像">
+<input type="image" src="${pageContext.request.contextPath}/image/siteLogo/POPUTE.png" width="600" height="150">
 </center>
 </header>
 <center>
