@@ -7,6 +7,11 @@
 <title>DOCOBLE FANTASY(仮)ボスページ</title>
 </head>
 <body>
+<header>
+<center>
+<input type="image" src="${pageContext.request.contextPath}/image/siteLogo/POPUTE.png" width="600" height="150">
+</center>
+</header>
 <center><h2>ボス一覧</h2></center>
 	<form action="" method="">
 		<center>
