@@ -1,38 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>確認画面</title>
-</head>
-<body>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+
 <%@ page import="bean.Weapon"%>
-<%@	page import="bean.Character"%>
+<%@	page import="bean.BattleCharacter"%>
 <%@ page import="bean.Boss"%>
 <%
 	String functionPage = (String) session.getAttribute("functionPage");
 
-	Weapon weapon = (Weapon) request.getAttribute("weapon");
-	Character character = (Character) request.getAttribute("character");
-	Boss boss = (Boss) request.getAttribute("boss");
+	Weapon weapon = (Weapon) session.getAttribute("weapon");
+	BattleCharacter character = (BattleCharacter) session.getAttribute("character");
+	Boss boss = (Boss) session.getAttribute("boss");
 %>
 <!DOCTYPE html>
 <html>
-
-
 <head>
-
-
 <meta charset="UTF-8">
 <title>確認画面</title>
-
-
 </head>
-
-
 <body>
 	<div align="center">
 		<h1>DOCOBLUEFANTASY攻略</h1>
@@ -41,9 +25,10 @@
 		<p>この内容で間違いありませんか？</p>
 
 		<!-- entry武器情報 -->
-		<% if(weapon.getName() != null) {%>
+		<% if(weapon != null) {%>
 		<form action="/docobluefantasy/AdminFunctionServlet" method="post">
 			<input type="hidden" name="pageMove" value="executeFunction">
+			<input type="hidden" name="functionPage" value="entry">
 			<table border="1">
 				<tr>
 					<th>武器名</th>
@@ -63,9 +48,10 @@
 		<% } %>
 
 		<!-- entryキャラクター情報 -->
-		<% if(character.getName() != null) {%>
+		<% if(character != null) {%>
 		<form action="/docobluefantasy/AdminFunctionServlet" method="post">
 			<input type="hidden" name="pageMove" value="executeFunction">
+			<input type="hidden" name="functionPage" value="entry">
 			<table border="1">
 				<tr>
 					<th>キャラクター名</th>
@@ -97,9 +83,10 @@
 		<% } %>
 
 		<!-- entryボス情報 -->
-		<% if(boss.getName() != null) {%>
+		<% if(boss != null) {%>
 		<form action="/docobluefantasy/AdminFunctionServlet" method="post">
 			<input type="hidden" name="pageMove" value="executeFunction">
+			<input type="hidden" name="functionPage" value="entry">
 			<table border="1">
 				<tr>
 					<th>ボス名</th>
@@ -123,19 +110,14 @@
 		<% } %>
 
 		<input type="button"
-			onclick="location.href='/docobluefantasy/WebContent/WEB-INF/admin.jsp'"
+			onclick="location.href='/docobluefantasy/AdminFunctionServlet'"
 			value="キャンセル">
 
 		<hr>
 		<p>Copyright ドコウィズ攻略班 All Rights Reseved.</p>
 	</div>
-</body>
 
+<input type="button" onclick="location.href='/docobluefantasy/AdminFunctionServlet'"value="戻る">
 
-</html>
-
-
-
-<input type="button" onclick="location.href='/docobluefantasy/WebContent/test/admin.jsp'"value="戻る">
 </body>
 </html>
