@@ -8,7 +8,6 @@ import java.sql.SQLException;
 
 import bean.BattleCharacter;
 
-//動作未確認
 public class CharacterDAO {
 
 	private final String JDBC_URL = "jdbc:mysql://172.16.6.152:3306/docobluefantasy?characterEncoding=utf-8&serverTimezone=JST";
