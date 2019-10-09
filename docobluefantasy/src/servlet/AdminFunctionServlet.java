@@ -80,7 +80,7 @@ public class AdminFunctionServlet extends HttpServlet {
 					int weaponAttackInteger = Integer.parseInt(weaponAttack);
 
 					Weapon weapon = new Weapon(weaponName, weaponAttackInteger, weaponSkill);
-					session.setAttribute("weapon", weapon);
+					request.setAttribute("weapon", weapon);
 
 					//キャラクター情報が全て書かれている時
 				} else if (!characterName.isEmpty() && !characterRarity.isEmpty() && !characterAttack.isEmpty()
@@ -94,7 +94,7 @@ public class AdminFunctionServlet extends HttpServlet {
 							characterAttackInteger, characterHpInteger,
 							characterSkill, characterEvaluationInteger);
 
-					session.setAttribute("character", character);
+					request.setAttribute("character", character);
 
 					//ボス情報が全て書かれている時
 				} else if (!bossName.isEmpty() && !bossAttack.isEmpty() && !bossHp.isEmpty()
@@ -105,7 +105,7 @@ public class AdminFunctionServlet extends HttpServlet {
 
 					Boss boss = new Boss(bossName, bossAttackInteger, bossHpInteger, bossSpecialAttack);
 
-					session.setAttribute("boss", boss);
+					request.setAttribute("boss", boss);
 
 				}
 

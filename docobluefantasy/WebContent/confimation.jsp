@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ page %>
-<% String name = (String)request.getAttribute("name");%>
+<%@ page import="bean.User"%>
+<% User user = (User) session.getAttribute("user");%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +13,7 @@
 <h1>DOCOBLUEFANTASY攻略</h1>
 <hr>
 
-<p>名前は<%= name%>でよろしいですか？</p>
+<p>名前は<%= user.getName()%>でよろしいですか？</p>
 
 <form action="/docobluefantasy/RegisterServlet" method="GET">
 <input type="submit" value="はい">
@@ -21,7 +21,7 @@
 <p>
 <div align="right">
 <p>
-	<a href="/docobluefantasy/register.jsp" >戻る</a>
+	<a href="/docobluefantasy/registar.jsp" >戻る</a>
 </p>
 </div>
 </form>
