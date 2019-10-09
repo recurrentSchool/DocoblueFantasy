@@ -299,8 +299,8 @@ public class WeaponDAO {
 			sqlWrite.append("UPDATE WEAPON ");
 			sqlWrite.append("SET ");
 			sqlWrite.append("NAME = ? ");//1
-			sqlWrite.append("ATTACK = ? ");//2
-			sqlWrite.append("SKILL = ? ");//3
+			sqlWrite.append(",ATTACK = ? ");//2
+			sqlWrite.append(",SKILL = ? ");//3
 			sqlWrite.append("WHERE ");
 			sqlWrite.append("NAME = ?");//4
 

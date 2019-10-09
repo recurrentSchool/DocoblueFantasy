@@ -20,7 +20,6 @@
 <h1>DOCOBLUEFANTASY攻略</h1>
 <hr>
 
-
 <%
 	if (message != null) {
 %>
