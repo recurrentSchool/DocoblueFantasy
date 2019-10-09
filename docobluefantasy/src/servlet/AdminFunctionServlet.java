@@ -16,6 +16,9 @@ import bean.Weapon;
 import model.AdminBossDateLogic;
 import model.AdminCharacterDateLogic;
 import model.AdminWeaponDateLogic;
+import model.ContentsBossSelectLogic;
+import model.ContentsCharacterSelectLogic;
+import model.ContentsWeaponSelectLogic;
 
 /**
  * Servlet implementation class AdminFunctionServlet
@@ -109,13 +112,81 @@ public class AdminFunctionServlet extends HttpServlet {
 
 				}
 
+				url = "test/confirmation_entry.jsp";
+
+			//削除時確認画面表示用処理
 			} else if (functionPage.equals("delete")) {
 
+				String contentsSelect = (String) request.getParameter("contentsSelect");
+				String deleteName = (String) request.getParameter("deleteName");
+
+				if(contentsSelect.equals("weapon"))  {
+
+					ContentsWeaponSelectLogic cwsl = new ContentsWeaponSelectLogic();
+
+					Weapon weapon = cwsl.executeSelect(deleteName);
+
+					if(weapon != null) {
+
+						request.setAttribute("weapon", weapon);
+						url = "test/confirmation_delete.jsp";
+
+					} else {
+
+						message = "該当する武器はありません";
+						url = "test/delete.jsp";
+
+					}
+
+				} else if(contentsSelect.equals("character")) {
+
+					ContentsCharacterSelectLogic ccsl = new ContentsCharacterSelectLogic();
+
+					BattleCharacter character = ccsl.executeSelect(deleteName);
+
+					if(character != null) {
+
+						request.setAttribute("character", character);
+						url = "test/confirmation_delete.jsp";
+
+					} else {
+
+						message = "該当する武器はありません";
+						url = "test/delete.jsp";
+
+					}
+
+				} else if(contentsSelect.equals("boss")) {
+
+					ContentsBossSelectLogic cbsl = new ContentsBossSelectLogic();
+
+					Boss boss = cbsl.executeSelect(deleteName);
+
+					if(boss != null) {
+
+						request.setAttribute("boss", boss);
+						url = "test/confirmation_delete.jsp";
+
+					} else {
+
+						message = "該当する武器はありません";
+						url = "test/delete.jsp";
+
+					}
+
+				}
+
+
+				//メッセージの登録
+				request.setAttribute("message", message);
+
+			//上書き時確認画面表示用処理
 			} else if (functionPage.equals("update")) {
 
 			}
+
 			//loginResult.jspへフォワード
-			RequestDispatcher dis = request.getRequestDispatcher("test/confirmation_entry.jsp");
+			RequestDispatcher dis = request.getRequestDispatcher(url);
 			dis.forward(request, response);
 
 			//各機能の実行
@@ -190,18 +261,80 @@ public class AdminFunctionServlet extends HttpServlet {
 
 				}
 
-				//メッセージの登録
-				request.setAttribute("message", message);
-
-				//admin.jspへフォワード
-				RequestDispatcher dis = request.getRequestDispatcher("test/admin.jsp");
-				dis.forward(request, response);
-
+			//削除機能
 			} else if (functionPage.equals("delete")) {
+
+				String weaponName = (String) request.getParameter("weaponName");
+				String characterName = (String) request.getParameter("characterName");
+				String bossName = (String) request.getParameter("bossName");
+
+				//削除の可否
+				boolean deletePropriety = false;
+
+				//武器情報の削除
+				if(weaponName != null && !weaponName.isEmpty()) {
+
+					Weapon weapon = new Weapon(weaponName, 0, null);
+
+					AdminWeaponDateLogic awdl = new AdminWeaponDateLogic();
+					deletePropriety = awdl.executeDelete(weapon);
+
+					if(deletePropriety == true) {
+
+						message = "削除が完了しました";
+
+					} else {
+
+						message = "削除に失敗しました";
+
+					}
+				//キャラクター情報の削除
+				} else if (characterName != null && !characterName.isEmpty()) {
+
+					BattleCharacter character = new BattleCharacter(characterName, null, 0, 0, null, 0);
+
+					AdminCharacterDateLogic acdl = new AdminCharacterDateLogic();
+					deletePropriety = acdl.executeDelete(character);
+
+					if(deletePropriety == true) {
+
+						message = "削除が完了しました";
+
+					} else {
+
+						message = "削除に失敗しました";
+
+					}
+				//ボス情報の削除
+				} else if (bossName != null && !bossName.isEmpty()) {
+
+					Boss boss = new Boss(bossName, 0, 0, null);
+
+					AdminBossDateLogic abdl = new AdminBossDateLogic();
+					deletePropriety = abdl.executeDelete(boss);
+
+					if(deletePropriety == true) {
+
+						message = "削除が完了しました";
+
+					} else {
+
+						message = "削除に失敗しました";
+
+					}
+
+				}
 
 			} else if (functionPage.equals("update")) {
 
 			}
+
+			//メッセージの登録
+			request.setAttribute("message", message);
+
+			//admin.jspへフォワード
+			RequestDispatcher dis = request.getRequestDispatcher("test/admin.jsp");
+			dis.forward(request, response);
 
 		}
 
