@@ -22,7 +22,6 @@ public class ContentsServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 
 
-
 	}
 
 	/**

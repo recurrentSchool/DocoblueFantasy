@@ -30,7 +30,7 @@
 <input type="hidden" name="pageMove" value="confirmation">
 <details>
 <summary>武器</summary>
-<h3>削除対象の武器名</h3>
+<h3>上書き対象の武器名</h3>
 <input type="text" name="weaponOriginalName">
 <br>
 <h3>上書きする内容</h3>
@@ -47,7 +47,7 @@
 <details>
 <summary>キャラクター</summary>
 
-<h3>削除対象のキャラクター名</h3>
+<h3>上書き対象のキャラクター名</h3>
 <input type="text" name="characterOriginalName">
 <br>
 <h3>上書きする内容</h3>
@@ -87,7 +87,7 @@
 
 <details>
 <summary>ボス</summary>
-<h3>削除対象のボス名</h3>
+<h3>上書き対象のボス名</h3>
 <input type="text" name="bossOriginalName">
 <br>
 <h3>上書きする内容</h3>

@@ -152,7 +152,7 @@ public class AdminFunctionServlet extends HttpServlet {
 
 					} else {
 
-						message = "該当する武器はありません";
+						message = "該当するキャラクターはいません";
 						url = "test/delete.jsp";
 
 					}
@@ -176,10 +176,6 @@ public class AdminFunctionServlet extends HttpServlet {
 					}
 
 				}
-
-
-				//メッセージの登録
-				request.setAttribute("message", message);
 
 			//上書き時確認画面表示用処理
 			} else if (functionPage.equals("update")) {
@@ -241,7 +237,7 @@ public class AdminFunctionServlet extends HttpServlet {
 				} else if (!bossOriginalName.isEmpty()) {
 
 					ContentsBossSelectLogic cbsl = new ContentsBossSelectLogic();
-					Boss bossOriginal = cbsl.executeSelect(characterOriginalName);
+					Boss bossOriginal = cbsl.executeSelect(bossOriginalName);
 
 					int bossAttackInteger = Integer.parseInt(bossAttack);
 					int bossHpInteger = Integer.parseInt(bossHp);
@@ -264,6 +260,9 @@ public class AdminFunctionServlet extends HttpServlet {
 				}
 
 			}
+
+			//メッセージの登録
+			request.setAttribute("message", message);
 
 			//entry,delete,updateの確認画面へフォワード
 			RequestDispatcher dis = request.getRequestDispatcher(url);
@@ -417,7 +416,7 @@ public class AdminFunctionServlet extends HttpServlet {
 				//武器情報の更新
 				if(weaponOriginalName != null && !weaponOriginalName.isEmpty()) {
 
-					Weapon weaponOriginal = new Weapon(bossOriginalName, 0, null);
+					Weapon weaponOriginal = new Weapon(weaponOriginalName, 0, null);
 
 					String weaponUpdateName = (String) request.getParameter("weaponUpdateName");
 					String weaponUpdateAttack = (String) request.getParameter("weaponUpdateAttack");

@@ -102,7 +102,7 @@
 				</tr>
 				<tr>
 					<th>必殺技</th>
-					<td><%=boss.getSpecialAttack()%><input type="hidden" name="bossSkill" value=<%=boss.getSpecialAttack()%>></td>
+					<td><%=boss.getSpecialAttack()%><input type="hidden" name="bossSpecialAttack" value=<%=boss.getSpecialAttack()%>></td>
 				</tr>
 			</table>
 			<input type="submit" value="実行">

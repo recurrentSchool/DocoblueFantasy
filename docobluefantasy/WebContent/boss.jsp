@@ -13,7 +13,7 @@
 </center>
 </header>
 <center><h2>ボス一覧</h2></center>
-	<form action="/docobluefantasy/ContentsServlet" method="post">
+	<form action="/docobluefantasy/ContentsServlet" method="GET">
 		<center>
 		<table border="1">
 				<tr>

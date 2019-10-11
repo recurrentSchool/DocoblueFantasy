@@ -234,9 +234,9 @@ public class BossDAO {
 			sqlWrite.append("UPDATE BOSS ");
 			sqlWrite.append("SET ");
 			sqlWrite.append("NAME = ? ");//1
-			sqlWrite.append("ATTACK = ? ");//2
-			sqlWrite.append("HP = ? ");//3
-			sqlWrite.append("SPECIALATTACK = ? ");//4
+			sqlWrite.append(",ATTACK = ? ");//2
+			sqlWrite.append(",HP = ? ");//3
+			sqlWrite.append(",SPECIALATTACK = ? ");//4
 			sqlWrite.append("WHERE ");
 			sqlWrite.append("NAME = ?");//5
 

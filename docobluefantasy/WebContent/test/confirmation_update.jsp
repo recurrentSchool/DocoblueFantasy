@@ -86,7 +86,7 @@
 				</tr>
 				<tr>
 					<th>攻撃力</th>
-					<td><%=characterOriginal.getAttack()%>></td>
+					<td><%=characterOriginal.getAttack()%></td>
 				</tr>
 				<tr>
 					<th>HP</th>
@@ -175,7 +175,7 @@
 				</tr>
 				<tr>
 					<th>必殺技</th>
-					<td><%=bossUpdate.getSpecialAttack()%><input type="hidden" name="bossUpdateSkill" value=<%=bossUpdate.getSpecialAttack()%>></td>
+					<td><%=bossUpdate.getSpecialAttack()%><input type="hidden" name="bossUpdateSpecialAttack" value=<%=bossUpdate.getSpecialAttack()%>></td>
 				</tr>
 			</table>
 			<input type="submit" value="実行">

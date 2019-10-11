@@ -13,11 +13,11 @@
 </center>
 </header>
 <center><h2>キャラクター一覧</h2></center>
-	<form action="/docobluefantasy/ContentsServlet" method="post">
+	<form action="/docobluefantasy/ContentsServlet" method="GET">
 		<center>
 		<table border="1">
 				<tr>
-					<td width="230" height="230"><center><p>カタリナ</p> <hr><a href="/docobluefantasy/ContentsServlet?characterName=catalina"><input type="image" src="${pageContext.request.contextPath}/image/character/catalina.png" width="180" height="150"></a></center></td>
+					<td width="230" height="230"><center><p>カタリナ</p> <hr><a href="/ContentsServlet?characterName=catalina"><input type="image" src="${pageContext.request.contextPath}/image/character/catalina.png" width="180" height="150"></a></center></td>
 					<td width="230" height="230"><center><p>オイゲン</p> <hr><a href="/docobluefantasy/ContentsServlet?characterName=eugen"><input type="image" src="${pageContext.request.contextPath}/image/character/eugen.png" width="180" height="150"></a></center></td>
 					<td width="230" height="230"><center><p>イオ</p> <hr><a href="/docobluefantasy/ContentsServlet?characterName="io><input type="image" src="${pageContext.request.contextPath}/image/character/io&rosetta.png" width="180" height="150"></a></center></td>
 </tr>

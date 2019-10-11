@@ -57,6 +57,7 @@ public class LoginServlet extends HttpServlet {
 
 			RequestDispatcher dis = request.getRequestDispatcher("/message.jsp");
 			dis.forward(request, response);
+
 		}
 
 	}//doPOST
