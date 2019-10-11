@@ -9,7 +9,7 @@
 <body>
 <center>
 <h2>ガチャシミュレーション</h2>
-<form action="/docobluefantasy/GachaServlet" method="">
+<form action="/docobluefantasy/GachaServlet" method="post">
 <input type="image" src="${pageContext.request.contextPath}/image/gacha/gacha.gif"><br>
 <input type="image" src="${pageContext.request.contextPath}/image/gacha/gachaBTN.png" width="140" height="70">
 </center>
