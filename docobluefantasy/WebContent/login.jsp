@@ -7,13 +7,17 @@
 <head>
 <meta charset="UTF-8">
 <title>DOCOBLE FANTASY(仮)ログインページ</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
+<header>
 <div align="center">
-<h1>DOCOBLUEFANTASY攻略</h1>
+<input type="image" src="${pageContext.request.contextPath}/image/siteLogo/POPUTE.png" width="600" height="150">
+</div>
+</header>
 <hr>
 
-
+<div align="center">
 	<form action="/docobluefantasy/LoginServlet" method="POST">
 		<table>
 			<tr>
@@ -31,11 +35,7 @@
 	</form>
 <hr>
 
-<table>
-<tr>
-	<th><font color="#9999FF">Copyright ドコウィズ攻略班 All Rights Reseved.</font></th>
-</tr>
-</table>
+<h5><font color="#0000CC">Copyright ドコウィズ攻略班 All Rights Reseved.</font></h5>
 </div>
 </body>
 </html>
