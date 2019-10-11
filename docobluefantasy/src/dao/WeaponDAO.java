@@ -164,22 +164,25 @@ public class WeaponDAO {
 
 			conn = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASS);
 
-			String sql = "SELECT * FROM WEAPON ORDER BY rand() LIMIT 10;";
-			pStmt = conn.prepareStatement(sql);
+			for (int i = 0; i < 10; i++) {
+				String sql = "SELECT * FROM WEAPON ORDER BY rand()";
+				pStmt = conn.prepareStatement(sql);
 
-			rs = pStmt.executeQuery();
+				rs = pStmt.executeQuery();
 
-			while (rs.next()) {
 
-				String name = rs.getString("NAME");
-				int attack = rs.getInt("ATTACK");
-				String skill = rs.getString("SKILL");
 
-				Weapon weaponResult = new Weapon(name, attack, skill);
-				listWeapon.add(weaponResult);
+				while (rs.next()) {
+
+					String name = rs.getString("NAME");
+					int attack = rs.getInt("ATTACK");
+					String skill = rs.getString("SKILL");
+
+					Weapon weaponResult = new Weapon(name, attack, skill);
+					listWeapon.add(weaponResult);
+				}
 
 			}
-
 		} catch (SQLException e) {
 
 			e.printStackTrace();
