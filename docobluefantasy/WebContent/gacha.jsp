@@ -7,6 +7,9 @@
 <title>ガチャ画面</title>
 </head>
 <body>
+<header>
+<input type="image" src="${pageContext.request.contextPath}/image/siteLogo/POPUTE.png" width="200" height="50">
+</header>
 <center>
 <h2>ガチャシミュレーション</h2>
 <form action="/docobluefantasy/GachaServlet" method="post">
