@@ -29,15 +29,25 @@ public class RegisterServlet extends HttpServlet {
 
 		boolean result = bo.executeRegist(user);
 
+		String message = "";
+
 		if (result == true) {
-			String message = "";
+
 			message = "登録完了です";
 
-			session.setAttribute("message",message );
+		} else {
 
-			RequestDispatcher dis = request.getRequestDispatcher("/message.jsp");
-			dis.forward(request, response);
+			message = "登録に失敗しました";
+
 		}
+
+		//message画面時、更新連打でユーザーが無限生成するためここでセッションの破棄
+		session.invalidate();
+
+		request.setAttribute("message", message);
+
+		RequestDispatcher dis = request.getRequestDispatcher("/message.jsp");
+		dis.forward(request, response);
 
 	}
 
@@ -67,7 +77,6 @@ public class RegisterServlet extends HttpServlet {
 
 		if (result == true) {
 
-			session.setAttribute("message",message );
 			RequestDispatcher dis = request.getRequestDispatcher("/confimation.jsp");
 			dis.forward(request, response);
 		}
@@ -75,8 +84,8 @@ public class RegisterServlet extends HttpServlet {
 		else {
 
 			message = "この名前は既に使われています";
-			session.setAttribute("message",message );
-			RequestDispatcher dis = request.getRequestDispatcher("/register.jsp");
+			request.setAttribute("message",message );
+			RequestDispatcher dis = request.getRequestDispatcher("/registar.jsp");
 			dis.forward(request, response);
 		}
 

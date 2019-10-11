@@ -7,9 +7,9 @@
 <%
 	String functionPage = (String) session.getAttribute("functionPage");
 
-	Weapon weapon = (Weapon) session.getAttribute("weapon");
-	BattleCharacter character = (BattleCharacter) session.getAttribute("character");
-	Boss boss = (Boss) session.getAttribute("boss");
+	Weapon weapon = (Weapon) request.getAttribute("weapon");
+	BattleCharacter character = (BattleCharacter) request.getAttribute("character");
+	Boss boss = (Boss) request.getAttribute("boss");
 %>
 <!DOCTYPE html>
 <html>
@@ -102,7 +102,7 @@
 				</tr>
 				<tr>
 					<th>必殺技</th>
-					<td><%=boss.getSpecialAttack()%><input type="hidden" name="bossSkill" value=<%=boss.getSpecialAttack()%>></td>
+					<td><%=boss.getSpecialAttack()%><input type="hidden" name="bossSpecialAttack" value=<%=boss.getSpecialAttack()%>></td>
 				</tr>
 			</table>
 			<input type="submit" value="実行">

@@ -8,7 +8,6 @@ import java.sql.SQLException;
 
 import bean.Boss;
 
-//動作未確認
 public class BossDAO {
 
 	private final String JDBC_URL = "jdbc:mysql://172.16.6.152:3306/docobluefantasy?characterEncoding=utf-8&serverTimezone=JST";
@@ -235,9 +234,9 @@ public class BossDAO {
 			sqlWrite.append("UPDATE BOSS ");
 			sqlWrite.append("SET ");
 			sqlWrite.append("NAME = ? ");//1
-			sqlWrite.append("ATTACK = ? ");//2
-			sqlWrite.append("HP = ? ");//3
-			sqlWrite.append("SPECIALATTACK = ? ");//4
+			sqlWrite.append(",ATTACK = ? ");//2
+			sqlWrite.append(",HP = ? ");//3
+			sqlWrite.append(",SPECIALATTACK = ? ");//4
 			sqlWrite.append("WHERE ");
 			sqlWrite.append("NAME = ?");//5
 

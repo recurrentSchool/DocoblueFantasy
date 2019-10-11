@@ -8,7 +8,6 @@ import java.sql.SQLException;
 
 import bean.BattleCharacter;
 
-//動作未確認
 public class CharacterDAO {
 
 	private final String JDBC_URL = "jdbc:mysql://172.16.6.152:3306/docobluefantasy?characterEncoding=utf-8&serverTimezone=JST";
@@ -101,7 +100,7 @@ public class CharacterDAO {
 
 			conn = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASS);
 
-			String sql = "SELECT NAME,RARITY,ATTACK,HP,SKILL,EVALUATION FROM CHARACTER WHERE NAME = ?";
+			String sql = "SELECT NAME,RARITY,ATTACK,HP,SKILL,EVALUATION FROM BATTLECHARACTER WHERE NAME = ?";
 			pStmt = conn.prepareStatement(sql);
 			pStmt.setString(1, character.getName());
 
@@ -168,7 +167,7 @@ public class CharacterDAO {
 
 			conn = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASS);
 
-			String sql = "DELETE FROM BOSS WHERE NAME = ?";
+			String sql = "DELETE FROM BATTLECHARACTER WHERE NAME = ?";
 			pStmt = conn.prepareStatement(sql);
 			pStmt.setString(1, character.getName());
 
@@ -236,14 +235,14 @@ public class CharacterDAO {
 
 			StringBuilder sqlWrite = new StringBuilder();
 
-			sqlWrite.append("UPDATE CHARACTER ");
+			sqlWrite.append("UPDATE BATTLECHARACTER ");
 			sqlWrite.append("SET ");
 			sqlWrite.append("NAME = ? ");//1
-			sqlWrite.append("RARYTY = ? ");//2
-			sqlWrite.append("ATTACK = ? ");//3
-			sqlWrite.append("HP = ? ");//4
-			sqlWrite.append("SKILL = ? ");//5
-			sqlWrite.append("EVALUATION = ? ");//6
+			sqlWrite.append(",RARITY = ? ");//2
+			sqlWrite.append(",ATTACK = ? ");//3
+			sqlWrite.append(",HP = ? ");//4
+			sqlWrite.append(",SKILL = ? ");//5
+			sqlWrite.append(",EVALUATION = ? ");//6
 			sqlWrite.append("WHERE ");
 			sqlWrite.append("NAME = ?");//7
 

@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%
+	String message = (String) request.getAttribute("message");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,6 +12,13 @@
 <body>
 <div align="center">
 <h1>DOCOBLUEFANTASY</h1>
+	<%
+		if (message != null) {
+	%>
+		<p> <%= message %> </p>
+	<%
+		}
+	%>
 <hr>
 	<form action="/docobluefantasy/RegisterServlet" method="POST">
 	<input type="hidden" name="admin" value="1">

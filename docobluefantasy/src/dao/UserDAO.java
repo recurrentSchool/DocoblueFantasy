@@ -8,10 +8,9 @@ import java.sql.SQLException;
 
 import bean.User;
 
-//動作未確認
 public class UserDAO {
 
-	private final String JDBC_URL = "jdbc:mysql://172.16.6.152:3306/docobluefantasy?characterEncoding=utf-8&serverTimezone=JST";
+	private final String JDBC_URL = "jdbc:mysql://172.16.6.152:3306/docobluefantasy?characterEncoding=UTF-8&serverTimezone=JST";
 	private final String DB_USER = "student";
 	private final String DB_PASS = "root";
 
