@@ -13,12 +13,11 @@
 </center>
 </header>
 <center><h2>ボス一覧</h2></center>
-	<form action="/docobluefantasy/ContentsServlet" method="GET">
 		<center>
 		<table border="1">
 				<tr>
 					<td width="230" height="230"><center><p>ジ・オーダー・グランデ</p> <hr><a href="/docobluefantasy/ContentsServlet?bossName=grandOrder"><input type="image" src="${pageContext.request.contextPath}/image/boss/GrandOrder.png" width="180" height="150"></a></center></td>
-					<td width="230" height="230"><center><p>グラニ</p> <hr><a href="/docobluefantasy/ContentsServlet?bossName=gurani"><input type="image" src="${pageContext.request.contextPath}/image/boss/Gurani.png" width="180" height="150"><input type="hidden" name="bossName" value="grani"></a></center></td>
+					<td width="230" height="230"><center><p>グラニ</p> <hr><a href="/docobluefantasy/ContentsServlet?bossName=gurani"><input type="image" src="${pageContext.request.contextPath}/image/boss/Gurani.png" width="180" height="150"></a></center></td>
 					<td width="230" height="230"><center><p>メドゥーサ</p> <hr><a href="/docobluefantasy/ContentsServlet?bossName=medusa"><input type="image" src="${pageContext.request.contextPath}/image/boss/Medusa.png" width="180" height="150"></a></center></td>
 </tr>
 <tr>
@@ -30,7 +29,6 @@
 					<td width="230" height="230"><center><p>アルティメットバハムート</p> <hr><a href="/docobluefantasy/ContentsServlet?bossName=ultimateBahamut"><input type="image" src="${pageContext.request.contextPath}/image/boss/UltimateBahamut.png" width="180" height="150"></a></center></td>
 		</table>
 		</center>
-	</form>
 
 </body>
 </html>
